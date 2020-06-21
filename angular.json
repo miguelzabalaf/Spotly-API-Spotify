@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "spotly"
+    }
+  },
+  "defaultProject": "spotly",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -7,7 +7,14 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+
+  // CONSUMIR API
+  import { HttpClientModule } from '@angular/common/http'; // Porque ocupa unas herramientas escensiales que serán usadas a lo largo del programa, Ej: La que me permite realizar peticiones
+  // CONSUMIR API
+
 import { AboutComponent } from './components/about/about.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +23,13 @@ import { AboutComponent } from './components/about/about.component';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    AboutComponent
+    AboutComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

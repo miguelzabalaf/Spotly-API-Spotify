@@ -1,1 +1,13 @@
 <p>home works!</p>
+
+<div class="newReleases">
+
+  <div *ngFor="let newRelease of newReleases" class="newRelease">
+    
+    <div class="newReleaseBg"></div>
+    <img [src]=" newRelease.images[0].url " alt="" class="newReleaseImg">
+    <p class="newReleaseType"> <span> {{ newRelease.album_type | capitalize }} </span> </p>
+    <p class="newReleaseArtist"> <span *ngFor="let artist of newRelease.artists"> {{ artist.name }} </span> </p>
+  </div>
+
+</div>

@@ -9,7 +9,7 @@ import { AboutComponent } from './components/about/about.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
-  { path: 'search', component: SearchComponent },
+  { path: 'search/:trem', component: SearchComponent },
   { path: 'about', component: AboutComponent },
   { path: 'artist/:id', component: ArtistComponent },
   { path: '**', pathMatch: 'full', redirectTo: '' },

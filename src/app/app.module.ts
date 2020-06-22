@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 import { AboutComponent } from './components/about/about.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     ArtistComponent,
     NavbarComponent,
     AboutComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
 
   <a href="" *ngFor="let termFound of termsFounds" class="termFound">
     <div class="termFoundImg">
-      <img [src]="termFound.images[2].url" alt=" {{ termFound.name }} ">
+      <img [src]="termFound.images | noimage" alt=" {{ termFound.name }} ">
     </div>
     <div class="termFoundDetails">
       <div class="termFoundDetailsName"><h2> {{ termFound.name }} </h2></div>

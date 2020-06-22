@@ -1,8 +1,9 @@
+<app-loading *ngIf="loading"></app-loading>
 <h1 class="titlePage">LOOKING FOR <span> {{ term | uppercase }} </span> </h1>
 
 <div class="termsFounds">
 
-  <a href="" *ngFor="let termFound of termsFounds" class="termFound">
+  <div (click)="showArtist(termFound.id)" *ngFor="let termFound of termsFounds" class="termFound">
     <div class="termFoundImg">
       <img [src]="termFound.images | noimage" alt=" {{ termFound.name }} ">
     </div>
@@ -11,6 +12,6 @@
       <div class="termFoundDetailsFollowers"> <h6> {{ termFound.followers.total | number }} Followers </h6> </div>
       <div class="termFoundDetailsGenres"> <span class="genre" *ngFor="let genres of termFound.genres"> {{ genres | capitalize }} </span> </div>
     </div>
-  </a>
+  </div>
 
 </div>

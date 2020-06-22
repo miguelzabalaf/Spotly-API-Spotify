@@ -1,1 +1,23 @@
-<p>artist works!</p>
+<div *ngIf="artist" class="artist">
+
+  <div class="artistHero">
+    <div class="artistHeroImg">
+      <img [src]="artist.images[0].url" alt="">
+    </div>
+    <div class="artistHeroDeg"></div>
+    <h1 class="artistHeroName"> {{ artist.name }} </h1>
+    <span class="artistHeroFollowers"> {{ artist.followers.total | number }} Followers </span>
+  </div>
+
+  <div class="artistRelated">
+
+    <div (click)="showArtistRelated( artistRelated.id )" *ngFor="let artistRelated of artistsRelated" class="related">
+      <div class="relatedImg">
+        <img [src]=" artistRelated.images[2].url " alt="">
+      </div>
+      <h3 class="relatedName"> {{ artistRelated.name }} </h3>
+    </div>
+
+  </div>
+
+</div>

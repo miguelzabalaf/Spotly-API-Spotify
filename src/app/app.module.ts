@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { AboutComponent } from './components/about/about.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     NavbarComponent,
     AboutComponent,
     CapitalizePipe,
-    NoimagePipe
+    NoimagePipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

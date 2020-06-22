@@ -11,23 +11,31 @@ export class SearchComponent implements OnInit {
 
   term: string;
   termsFounds: any;
+  loading: boolean;
 
   constructor( private activatedRoute: ActivatedRoute,
                private router: Router,
                private spotify: SpotifyService ) {
 
-              this.activatedRoute.params.subscribe( params => {
-                this.term = params['term']
-
-                this.spotify.getArtist(this.term).subscribe( (data:any) => {
-                  console.log(data);
-                  this.termsFounds = data
+                this.loading = false;
+                
+                this.activatedRoute.params.subscribe( params => {
+                  this.term = params['term']
+                  
+                  this.spotify.getArtists(this.term).subscribe( (data:any) => {
+                    console.log(data);
+                    this.termsFounds = data
+                    this.loading = false;
                 });
               });
                 
    }
 
   ngOnInit(): void {
+  }
+
+  showArtist(id: string) {
+    this.router.navigate( ['/artist', id] );
   }
 
 }

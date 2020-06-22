@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,10 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor( private router: Router ) { }
+  termsFounds: any[] = [];
+
+  constructor( private router: Router,
+              private spotify: SpotifyService ) { }
 
   ngOnInit(): void {
   }

@@ -7,9 +7,8 @@ import { AboutComponent } from './components/about/about.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', component: HomeComponent },
-  { path: 'search/:trem', component: SearchComponent },
+  { path: '', component: HomeComponent },
+  { path: 'search/:term', component: SearchComponent },
   { path: 'about', component: AboutComponent },
   { path: 'artist/:id', component: ArtistComponent },
   { path: '**', pathMatch: 'full', redirectTo: '' },

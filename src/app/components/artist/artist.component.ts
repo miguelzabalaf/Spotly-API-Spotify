@@ -12,6 +12,7 @@ export class ArtistComponent implements OnInit {
   artistId: string;
   artist: any;
   artistsRelated: any;
+  albumsArtist: any;
 
   constructor( private activatedRoute: ActivatedRoute, 
                private spotify: SpotifyService,
@@ -22,18 +23,19 @@ export class ArtistComponent implements OnInit {
                   this.artistId = params['id'];
                   this.getArtist( params['id'] );
                   this.getArtistsRelated( params['id'] );
+                  this.getAlbumsArtist( params['id'] );
                 });
-   }
-
+              }
+              
   ngOnInit(): void {
   }
-
+  
   getArtist( id: string ) {
     this.spotify.getArtist(id)
-                .subscribe( (data:any) => {
-                  this.artist = data
+    .subscribe( (data:any) => {
+      this.artist = data
                 });
-  }
+              }
 
   getArtistsRelated( id: string ) {
     this.spotify.getRelatedArtists(id)
@@ -44,6 +46,14 @@ export class ArtistComponent implements OnInit {
 
   showArtistRelated( id: string ) {
     this.router.navigate( ['/artist', id] );
+  }
+
+  getAlbumsArtist( id:string ) {
+    this.spotify.getAlbumsArtist(id)
+                .subscribe( (data:any) => {
+                  this.albumsArtist = data;
+                  console.log(this.albumsArtist);
+                } )
   }
 
 }

@@ -20,4 +20,14 @@
 
   </div>
 
+  <h2 class="mt-3">{{ artist.name }} Albums</h2>
+
+  <div class="albumsArtist">
+    <div *ngFor="let album of albumsArtist" class="album">
+      <div class="albumImg">
+        <img [src]="album.images[1].url" alt="">
+      </div>
+    </div>
+  </div>
+
 </div>

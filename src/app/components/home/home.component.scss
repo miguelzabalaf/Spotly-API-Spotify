@@ -1,87 +1,145 @@
-.titlePage {
-  padding-top: 25px;
-  color: #999;
+.hero {
+  height: 600px;
+  width: 100%;
+  background: #071B1C;
+  position: relative;
+  z-index: -1;
+
+  &Img {
+    height: inherit;
+    position: absolute;
+    right: 0;
+  }
 }
 
-.newReleases {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  transition: all 0.3s;
+.latestReleases {
+  // border: 1px solid red;
+  max-width: 1000px;
+  margin: -200px auto;
+  z-index: 6;
 
-  .newRelease {
-    width: 250px;
-    height: 250px;
-    flex-shrink: 0;
-    margin: 12px;
-    border-radius: 25px;
+  .titlePage {
+    padding-top: 25px;
+    color: #DDD;
+    font-size: 25px;
+  }
+  
+  .newReleases {
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
     transition: all 0.3s;
-    overflow: hidden;
-    position: relative;
-    &:hover .newReleaseImg {
-      transform: scale(1.02);
-    }
-    &:hover .newReleaseBg {
-      height: 0%;
-      opacity: 0;
-    }
-    &:hover .newReleaseArtist {
-      transform: translateY(150%);
-    }
-    &:hover {
-      box-shadow: 0px 25px 25px -25px rgba(0,0,0,0.75);
-      cursor: pointer;
-    }
-
-    &Img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: all 0.3s;
-    }
-
-    &Type {
-      background-color: rgba(255, 255, 255, 0.50);
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 2px 15px;
-      margin: 0;
+    overflow: auto;
+  
+    .newRelease {
+      width: 150px;
+      height: 150px;
+      flex-shrink: 0;
+      margin: 12px;
       border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      span {
-        font-size: small;
-        color: #333;
-        font-weight: 500;
+      transition: all 0.3s;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.7);
+      &:hover .newReleaseImg {
+        transform: scale(1.02);
+      }
+      &:hover .newReleaseBg {
+        height: 0%;
+        opacity: 0;
+      }
+      &:hover .newReleaseArtist {
+        // transform: translateY(150%);
+        color: rgba(255, 255, 255, 0.10);
+      }
+  
+      &Img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s;
+      }
+  
+      &Type {
+        background-color: rgba(255, 255, 255, 0.50);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 2px 15px;
+        margin: 0;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        span {
+          font-size: small;
+          color: #333;
+          font-weight: 500;
+        }
+      }
+  
+      &Artist {
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        z-index: 2;
+        transition: all 0.3s;
+        
+        span {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+  
+      &Bg {
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180.61deg, rgba(255, 255, 255, 0) 1.35%, #000000 98.64%);
+        transition: all 0.3s;
+        z-index: 1;
       }
     }
 
-    &Artist {
-      position: absolute;
-      bottom: 0;
-      left: 15px;
-      z-index: 2;
-      transition: all 0.3s;
-      
-      span {
-        font-size: 18px;
-        font-weight: 600;
-      }
+    .newRelease:nth-of-type(1) {
+      margin-left: 0;
     }
+  }
 
-    &Bg {
-      height: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(180.61deg, rgba(255, 255, 255, 0) 1.35%, #000000 98.64%);
-      transition: all 0.3s;
-      z-index: 1;
-    }
+  .newReleases::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  .newReleases::-webkit-scrollbar:vertical {
+    width:5px;
+  }
+  
+  .newReleases::-webkit-scrollbar-button:increment,.newReleases::-webkit-scrollbar-button {
+    display: none;
+  } 
+  
+  .newReleases::-webkit-scrollbar:horizontal {
+    height: 7px;
+  }
+  
+  .newReleases::-webkit-scrollbar-thumb {
+    background-color: rgba(204, 204, 204, 0.10);
+    border-radius: 2px;
+  }
+  
+  .newReleases::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .latestReleases {
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
 

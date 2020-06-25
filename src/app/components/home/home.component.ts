@@ -8,6 +8,8 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class HomeComponent implements OnInit {
 
+  developer = 'Miguel Zabala Figueroa';
+  thisYear = new Date().getFullYear();
   newReleases: any[] = [];
   loading: boolean;
 

@@ -4,12 +4,52 @@
   background: #071B1C;
   position: relative;
   z-index: -1;
+  transition: all 0.3s;
 
   &Img {
     height: inherit;
     position: absolute;
     right: 0;
+    transition: all 0.3s;
   }
+
+  &Container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    transition: all 0.3s;
+    
+    .heroCallToAction {
+      position: absolute;
+      z-index: 10;
+      display: inline-block;
+      position: absolute;
+      top: 185px;
+      transition: all 0.3s;
+      .title {
+  
+        h1 {
+          font-weight: 100;
+  
+          strong {
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.25);
+          }
+        }
+      }
+  
+      .content {
+        width: 250px;
+        p {
+          display: block;
+          font-size: 12.5px;
+          font-weight: 100;
+          color: rgba(255, 255, 255, 0.25);
+        }
+      }
+    }
+  }
+
 }
 
 .latestReleases {
@@ -59,25 +99,6 @@
         height: 100%;
         object-fit: cover;
         transition: all 0.3s;
-      }
-  
-      &Type {
-        background-color: rgba(255, 255, 255, 0.50);
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        padding: 2px 15px;
-        margin: 0;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-  
-        span {
-          font-size: small;
-          color: #333;
-          font-weight: 500;
-        }
       }
   
       &Artist {
@@ -137,6 +158,14 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .hero {
+
+    &Container {
+      padding: 15px;
+    }
+
+  }
+
   .latestReleases {
     margin-left: 15px;
     margin-right: 15px;
@@ -148,6 +177,31 @@
     .newRelease {
       width: 200px;
       height: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .hero {
+
+    &Container {
+      padding: 15px;
+
+      .heroCallToAction {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        left: 10%;
+        right: 10%;
+        
+        .content {
+          margin: auto;
+        }
+      }
+    }
+    &Img {
+    object-position: -150px;
+    filter: blur(2.5px);
     }
   }
 }

@@ -1,9 +1,8 @@
 .artist {
 
   &Hero {
-    height: 350px;
+    height: 650px;
     position: relative;
-    border-radius: 25px;
     overflow: hidden;
 
     &Img {
@@ -28,6 +27,8 @@
     }
 
     &Name {
+      width: 1000px;
+      margin: auto;
         position: absolute;
         bottom: 15px;
         left: 25px;
@@ -38,33 +39,20 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-
-    &Followers {
-      position: absolute;
-      z-index: 2;
-      top: 25px;
-      right: 25px;
-      padding: 5px 15px;
-      background: rgba(255, 255, 255, 0.15);
-      color: #FFF;
-      border-radius: 100px;
-      transition: all 0.3s;
-      cursor: pointer;
-      
-      &:hover {
-        background: rgba(255, 255, 255, 0.35);
-      }
-    }
   }
 
-  &Related {
+.contentContainer {
+  max-width: 1000px;
+  margin: auto;
+
+  .artistRelated {
     margin-top: 15px;
     overflow: auto;
     display: flex;
 
     .related {
-      width: 150px;
-      height: 150px;
+      width: 125px;
+      height: 125px;
       flex-shrink: 0;
       border-radius: 15px;
       margin-right: 10px;
@@ -106,28 +94,28 @@
 
   }
 
-  &Related::-webkit-scrollbar {
+  .artistRelated::-webkit-scrollbar {
     -webkit-appearance: none;
   }
   
-  &Related::-webkit-scrollbar:vertical {
+  .artistRelated::-webkit-scrollbar:vertical {
     width:5px;
   }
   
-  &Related::-webkit-scrollbar-button:increment,&Related::-webkit-scrollbar-button {
+  .artistRelated::-webkit-scrollbar-button:increment,.artistRelated::-webkit-scrollbar-button {
     display: none;
   } 
   
-  &Related::-webkit-scrollbar:horizontal {
+  .artistRelated::-webkit-scrollbar:horizontal {
     height: 10px;
   }
   
-  &Related::-webkit-scrollbar-thumb {
+  .artistRelated::-webkit-scrollbar-thumb {
     background-color: rgba(204, 204, 204, 0.35);
     border-radius: 2px;
   }
   
-  &Related::-webkit-scrollbar-track {
+  .artistRelated::-webkit-scrollbar-track {
     border-radius: 5px;
   }
 
@@ -179,5 +167,19 @@
   
   .albumsArtist::-webkit-scrollbar-track {
     border-radius: 5px;
+  }
+
+}
+}
+
+@media screen and (max-width: 1000px) {
+  .contentContainer h4 {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .artistHero {
+    height: 350px;
   }
 }

@@ -33,7 +33,7 @@
   
           strong {
             font-weight: 800;
-            color: rgba(255, 255, 255, 0.25);
+            color: rgba(255, 255, 255, 0.35);
           }
         }
       }
@@ -44,7 +44,7 @@
           display: block;
           font-size: 12.5px;
           font-weight: 100;
-          color: rgba(255, 255, 255, 0.25);
+          color: rgba(255, 255, 255, 0.35);
         }
       }
     }
@@ -157,6 +157,67 @@
   }
 }
 
+.featuredArtists {
+  margin: 225px auto 225px auto;
+  max-width: 1000px;
+  
+  h3 {
+    color: #DDD;
+    font-size: 25px;
+  }
+  
+  .featuredArtistsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+  }
+
+  .artist {
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .artist:nth-child(1) {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+  }
+
+  .artist:nth-child(3) {
+    grid-row: 1 / 3;
+    grid-column: 3 / 4;
+  }
+}
+
+.featuredArtistsTitle {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 75px;
+  margin-top: -525px;
+  z-index: 5;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.35);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #FFF;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 5px 15px;
+    cursor: default;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .hero {
 
@@ -165,11 +226,18 @@
     }
 
   }
-
   .latestReleases {
-    margin-left: 15px;
-    margin-right: 15px;
+    .titlePage {
+      margin-left: 15px;
+    }
   }
+
+  .featuredArtists {
+    h3 {
+      margin-left: 15px;
+    }
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -178,6 +246,20 @@
       width: 200px;
       height: 200px;
     }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .featuredArtistsTitle {
+    margin-top: -425px;
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .featuredArtistsTitle {
+    margin-top: -355px;
+    font-size: 35px;
   }
 }
 

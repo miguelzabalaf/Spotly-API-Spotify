@@ -2,6 +2,8 @@
   padding-top: 75px;
   padding-left: 15px;
   color: #999;
+  max-width: 1000px;
+  margin: auto;
 
   span {
     color: #FFF;
@@ -10,6 +12,7 @@
 
 .termsFounds {
   max-width: 1000px;
+  margin: auto;
   padding: 15px;
 
   .termFound {
@@ -42,7 +45,13 @@
       &Name {
 
         h2 {
-          margin: 0;
+          margin-top: 5px;
+          font-size: 21px;
+          padding-right: 15px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
         }
       }
 
@@ -102,5 +111,33 @@
       }
     }
 
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .titlePage {
+    font-size: 21px;
+  }
+
+  .termsFounds {
+    .termFound {
+      &Details {
+        &Name {
+          h2 {
+            font-size: 18px;
+          }
+        }
+        &Followers {
+          h6 {
+            font-size: 12px;
+          }
+        }
+        &Genres {
+          .genre {
+            font-size: 12px;
+          }
+        }
+      }
+    }
   }
 }
